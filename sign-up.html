@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join for Wellness</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: smaller;
+            background: rgba(0, 0, 0, 0.7)  url(../img/bg1.jpg);
+            margin: 0;
+            background-attachment: fixed;
+            background-blend-mode: darken;
+        }
+
+        form {
+            max-height: 90vh;
+            width: 90%;
+            max-width: 500px;
+            position:absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+            padding: 50px 35px;
+            text-align: center;
+            overflow: auto;
+            color: white;
+        }
+
+        h1 {
+            margin-bottom: 2px;
+
+        }
+
+        table {
+            width: 100%;
+            text-align: center;
+        }
+
+        td {
+            padding: 10px 0;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="email"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 70%;
+            margin: 1px;
+            border: 1px solid #a5a2a2;
+            border-radius: 5px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+
+        .social {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .social div {
+            width: 48%;
+            border-radius: 3px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.27);
+            color: #333;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .social div:hover {
+            background-color: rgba(255, 255, 255, 0.47);
+        }
+
+        .social i {
+            margin-right: 4px;
+        }
+
+        .account-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .account-links a {
+            color: #e8eae5;
+            text-decoration: none;
+        }
+
+        .account-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="../INDEX/index.html" method="post">
+        <h1>Join for Wellness!!</h1>
+        <table>
+            <tr>
+                <td>
+                   <h4><label for="name">NAME:</label><h4>
+                    <input type="text" id="name" placeholder="Enter your name" name="name">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4><label for="age">AGE:</label></h4>
+                    <input type="number" id="age" placeholder="Enter your age" name="age">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4><label>GENDER:</label></h4>
+                    <input type="radio" id="male" name="gender" value="male"><label for="male">MALE</label>
+                    <input type="radio" id="female" name="gender" value="female"><label for="female">FEMALE</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4><label>MENTAL ILLNESS SYMPTOMS:</label></h4><br>
+                    <input type="checkbox" id="depression" name="SYMPTOMS" value="depression"><label for="depression">DEPRESSION</label>
+                    <input type="checkbox" id="anxiety" name="SYMPTOMS" value="anxiety"><label for="anxiety">ANXIETY</label>
+                    <input type="checkbox" id="overthinking" name="SYMPTOMS" value="overthinking"><label for="overthinking">OVERTHINKING</label>
+                    <input type="checkbox" id="stress" name="SYMPTOMS" value="stress"><label for="stress">STRESS</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4><label>DISEASE:</label></h4><br>
+                    <input type="checkbox" id="diabetes" name="DISEASE" value="diabetes"><label for="diabetes">DIABETES</label>
+                    <input type="checkbox" id="thyroid" name="DISEASE" value="thyroid"><label for="thyroid">THYROID</label>
+                    <input type="checkbox" id="anemia" name="DISEASE" value="anemia"><label for="anemia">ANEMIA</label>
+                    <input type="checkbox" id="others" name="DISEASE" value="others"><label for="others">OTHERS</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4><label for="email">EMAIL:</label></h4>
+                    <input type="email" id="email" placeholder="Enter your email" name="email">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4><label for="date">DOB:</label></h4>
+                    <input type="date" id="date" name="date">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4><label for="city">CITY:</label></h4>
+                    <select id="city" name="city">
+                        <option>--select--</option>
+                        <option>BHUBANESWAR</option>
+                        <option>MUMBAI</option>
+                        <option>DELHI</option>
+                        <option>BENGALURU</option>
+                        <option>OTHER</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4><label for="comment">Comment :</label></h4>
+                    <textarea id="comment" rows="4" cols="40" name="comment"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="SUBMIT">
+                </td>
+            </tr>
+        </table>
+        <div class="social">
+            <div class="go"><i class="fab fa-google"></i> Sign up with Google</div>
+            <div class="fb"><i class="fab fa-facebook"></i>Sign up with Facebook</div>
+        </div>
+        <div class="account-links">
+            <p>Already have an account? <a href="../INDEX/sign-in.html">Sign in</a></p>
+        </div>
+    </form>
+</body>
+
+</html>

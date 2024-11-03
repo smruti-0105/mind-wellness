@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CS/style1.css">
+    
+    <title>Simple Timer</title>
+    <style>
+        body {
+            background-color: #f5f7fa;
+            font-family: 'Arial', sans-serif;
+            color: #2c3e50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .a {
+            border: 3px solid #3498db;
+            margin: 20px;
+            padding: 20px;
+            height: 500px;
+            width: 300px;
+            background-color: #fff8e1;
+            overflow-y: auto;
+            overflow-x: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .a h4, .a h5 {
+            color: #3498db;
+            margin: 10px 0;
+        }
+
+        .a ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .a li {
+            margin-bottom: 10px;
+        }
+
+        .a::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .a::-webkit-scrollbar-thumb {
+            background: #3498db;
+            border-radius: 10px;
+        }
+
+        .a::-webkit-scrollbar-track {
+            background: #ecf0f1;
+            border-radius: 10px;
+        }
+
+        .main-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            width: 80%;
+            height: 80vh;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            position: relative;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 60%;
+        }
+
+        h2 {
+            font-size: 2em;
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+
+        .time-input {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .time-input input, .time-input button {
+            padding: 10px;
+            font-size: 1em;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .time-input button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .time-input button:hover {
+            background-color: #2980b9;
+        }
+
+        .time-display {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3em;
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+
+        .time-display div {
+            display: inline-block;
+        }
+
+        .time-display .colon {
+            margin: 0 5px;
+        }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+        }
+
+        .controls button {
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        .controls button:hover {
+            background-color: #2980b9;
+        }
+
+        .quote {
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-style: italic;
+            color: #2c3e50;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container center">
+        <div class="a">
+            <p style="color: red;"><u><b>Instant Relaxation Technique</b></u></p>
+            <h4>Exercises:</h4>
+            <ul>
+                <li>
+                    <h5>Deep Breathing:</h5> Sit or lie down comfortably. Close your eyes and focus on your breath.
+                    Breathe in slowly through your nose for a count of 4, hold for a count of 2, and exhale slowly through your
+                    mouth for a count of 6. Repeat this cycle for several minutes.
+                </li>
+                <br>
+                <h4>Mindfulness Techniques:</h4>
+                <li>
+                    <h5>5 Senses Focus:</h5>Take a minute to focus on your five senses. Name five things you can see,
+                    four things you can touch, three things you can hear, two things you can smell, and one thing you
+                    can taste.
+                </li>
+                <br>
+                <h4>Visualization:</h4>
+                <li>
+                    Imagine yourself in a peaceful and calming place. Focus on the details of the scene, like the sights, sounds, and smells. Let yourself feel relaxed and at ease.
+                </li>
+                <br>
+                <h4>Focus on the Present Moment:</h4>
+                <li>Take a moment to acknowledge your thoughts and feelings without judgment. Focus on what's happening right now, rather than dwelling on the past or worrying about the future.</li>
+            </ul>
+        </div>
+
+        <div class="content-container">
+            <h2>!!Welcome To Your Comfort Zone!!</h2>
+            <!-- User input for time -->
+            <div class="time-input center">
+                <input type="number" id="hours" placeholder="Hours" min="0">
+                <input type="number" id="minutes" placeholder="Minutes" min="0" max="59">
+                <input type="number" id="seconds" placeholder="Seconds" min="0" max="59">
+                <button id="start">Start</button>
+            </div>
+
+            <!-- Timer -->
+            <div class="time-display center">
+                <div class="time" id="time">
+                    <div id="hour">00</div>
+                    <div class="colon">:</div>
+                    <div id="minute">00</div>
+                    <div class="colon">:</div>
+                    <div id="second">00</div>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <div class="controls center">
+                <button id="pause">Pause</button>
+                <button id="reset">Reset</button>
+            </div>
+
+            <!-- Motivational Quote -->
+            <div class="quote center">
+                <p>"The best way to get started is to quit talking and begin doing." – Walt Disney</p>
+            </div>
+        </div>
+    </div>
+    <script src="../javScr/script1.js"></script>
+</body>
+</html>

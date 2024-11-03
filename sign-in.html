@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>sign-in</title>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+   <style>
+       body {
+            font-family: Arial, sans-serif;
+            font-size: smaller;
+            background: rgba(0, 0, 0, 0.7)url(../img/bg1.jpg);
+            margin: 0;
+            background-attachment: fixed;
+            background-blend-mode: darken;
+        }
+
+      form {
+         height: 520px;
+         width: 400px;
+         position: absolute;
+         transform: translate(-50%, -50%);
+         top: 50%;
+         left: 50%;
+         border-radius: 10px;
+         backdrop-filter: blur(10px);
+         border: 2px solid rgba(255, 255, 255, 0.1);
+         box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+         padding: 50px 35px;
+         text-align: center;
+         color: white;
+      }
+      p{
+         color: white;
+      }
+      table{
+         font-size:15px;
+      }
+   </style>
+</head>
+
+<body>
+ 
+   <CENTER>
+      <form action="">
+         <h2>WELCOME BACK!!</h2>
+         <table style="margin-left: 8%;">
+            <tr>
+               <td>User Name:<input type="text" placeholder="Enter your name" name="name"style="margin-left:24px;"></td>
+            </tr>
+   <br>
+            <tr>
+               <td>User Password:<input type="password" placeholder="Enter your Password" name="password"style="margin-top:6px;"></td> 
+            </tr>
+            <td>  
+               <a href="../INDEX/index.html">
+                     <button type="button"  style="margin-top:10px ;" class="btn btn-dark btn-outline-info" onclick="abc()">
+                     LOGIN</button>
+               </a>
+            </td>
+            </tr>
+            <tr>
+               <td>
+                  Do not have any account?? 
+                  <a href="../INDEX/sign-up.html">
+                     <p>CLICK AND JOIN US</p>
+                  </a>
+               </td>
+            </tr>
+         </table>
+      </form>
+   </CENTER>
+</body>
+</html>
